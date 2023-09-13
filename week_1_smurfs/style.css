@@ -179,19 +179,31 @@ button:hover {
 @keyframes width {
   from {
     width: 72px;
+    opacity: 0;
+  }
+
+  5% {
+    opacity: 1;
   }
   to {
     width: 100%;
+    opacity: 1;
   }
 }
 
 @keyframes walk {
   from {
     transform: translateX(0);
+    opacity: 0;
+  }
+
+  5% {
+    opacity: 1;
   }
 
   to {
     transform: translateX(calc(100vw - 80px));
+    opacity: 1;
   }
 }
 
