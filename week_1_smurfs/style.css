@@ -35,15 +35,20 @@ h1 {
   width: 100%:
   text-align: left;
   font-size: 5.5vw;
+  line-height: 1;
 }
 
 h1.bottom {
-  font-size: 7.5vw;
+  font-size: 9vw;
 }
 
 h1 span:nth-child(2) {
   text-align: right;
   font-size: 1.2em;
+}
+
+h1.bottom span:nth-child(2) {
+  font-size: 1em;
 }
 
 .hero img {
@@ -81,6 +86,13 @@ h3 {
   font-size: 48px;
   color: var(--dark-blue);
   text-shadow: 1px 1px 1px white, -1px 1px 1px white, 1px -1px 1px white, -1px -1px 1px white;
+  margin: 2em 0 8px;
+}
+
+.cta {
+  margin: 2em auto;
+  text-align: center;
+  letter-spacing: 0.025em;
 }
 
 .guide {
