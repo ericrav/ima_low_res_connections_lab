@@ -1,0 +1,194 @@
+
+html,body {
+  margin: 0;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  background: wheat;
+  color: #cb6259;
+  font-family: 'Lilita One', cursive;
+  --blue: #4eb9fd;
+  --dark-blue: #3297d8;
+}
+
+:root {
+  scroll-timeline: --scrollTimeline y;
+}
+
+.hero {
+  padding: 4px;
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  background: #eea7c4;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+h1 {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%:
+  text-align: left;
+  font-size: 5.5vw;
+}
+
+h1.bottom {
+  font-size: 7.5vw;
+}
+
+h1 span:nth-child(2) {
+  text-align: right;
+  font-size: 1.2em;
+}
+
+.hero img {
+  max-width: 360px;
+  margin: 16px auto;
+
+  animation-name: disappear;
+  animation-duration: 1ms;
+  animation-timeline: --scrollTimeline;
+}
+
+.hero + p {
+  margin-top: 100px;
+  margin-bottom: 32px;
+}
+
+p {
+  max-width: 900px;
+  margin: 24px auto;
+  font-size: 32px;
+  color: #8e5a55;
+  font-family: 'Jost', sans-serif;
+}
+
+h2 {
+  font-size: 64px;
+  color: var(--blue);
+  display: flex;
+  flex-direction: column;
+  text-shadow: 2px 2px 2px white, -2px 2px 2px white, 2px -2px 2px white, -2px -2px 2px white;
+
+}
+
+h3 {
+  font-size: 48px;
+  color: var(--dark-blue);
+  text-shadow: 1px 1px 1px white, -1px 1px 1px white, 1px -1px 1px white, -1px -1px 1px white;
+}
+
+.guide {
+  max-width: 900px;
+  margin: auto;
+}
+
+.upsell {
+  margin: 24px auto;
+  background: #fbd49d;
+  max-width: 900px;
+  border-radius: 24px;
+  padding: 24px 48px;
+  text-align: center;
+}
+
+button {
+  border: none;
+  margin: 0;
+  width: auto;
+  overflow: visible;
+
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
+
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--blue);
+  padding: 8px 24px;
+  color: wheat;
+  /* text-shadow: 1px 1px 0 white, -1px 1px 0 white, 1px -1px 0 white, -1px -1px 0 white; */
+  border-radius: 24px;
+  font-family: 'Lilita One', cursive;
+  font-size: 32px;
+  text-transform: uppercase;
+  letter-spacing: 0.125em;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  margin-bottom: 42px;
+}
+
+button:hover {
+  background: var(--dark-blue);
+}
+
+.progress {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  right: 0;
+}
+
+.progress img {
+  width: 80px;
+  height: auto;
+  animation-name: walk;
+  animation-duration: 1ms;
+  animation-timeline: --scrollTimeline;
+  position: absolute;
+  bottom: 4px;
+}
+
+.progress .bar {
+  position: absolute:
+  left: 0;
+  bottom: 0;
+  height: 8px;
+  background: #cb6259;
+  animation-name: width;
+  animation-duration: 1ms;
+  animation-timeline: --scrollTimeline;
+}
+
+@keyframes width {
+  from {
+    width: 72px;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes walk {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(100vw - 80px));
+  }
+}
+
+@keyframes disappear {
+  from {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
