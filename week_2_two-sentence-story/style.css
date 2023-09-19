@@ -1,0 +1,207 @@
+html, body {
+  margin: 0;
+  background: black;
+  color: white;
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  transition: opacity 0.5s ease-in;
+}
+
+.container.open {
+  opacity: 0;
+}
+.box {
+  width: 600px;
+  height: 600px;
+  border: 1px solid white;
+  border-radius: 5px;
+  font-size: 24px;
+  overflow-y: scroll;
+}
+
+.box p {
+  padding: 60px;
+}
+
+.box .stairs {
+  margin-top: 100px;
+  position: relative;
+}
+
+.box .stairs img {
+  width: 100%;
+  height: auto;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateX(var(--offset, 0));
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.intro {
+  transform: translateY(75px);
+}
+
+.box p > span {
+  display: block;
+  margin-bottom: 1em;
+  opacity: 0;
+  animation: fade-in 2s ease-in-out forwards;
+}
+
+.box p > span:nth-child(2) {
+  margin-left: 0.5em;
+  animation-delay: 1s;
+  --offset: 1em;
+}
+
+.box p > span:nth-child(3) {
+  margin-left: 1em;
+  animation-delay: 2.5s;
+  --offset: 2em;
+}
+
+.box p > span:nth-child(4) {
+  margin-left: 2em;
+  animation-delay: 4s;
+  --offset: 3em;
+}
+
+.stairs p {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.stairs p > span {
+  position: absolute;
+}
+
+.stairs p > span:nth-child(1) {
+  animation-delay: 6s;
+  top: 120px;
+  left: 110px;
+}
+
+.stairs p > span:nth-child(2) {
+  animation-delay: 7s;
+  top: 182px;
+  left: 182px;
+}
+
+.stairs p > span:nth-child(3) {
+  animation-delay: 8s;
+  top: 245px;
+  left: 250px;
+}
+
+.stairs p > span:nth-child(4) {
+  animation-delay: 9s;
+  top: 340px;
+  left: 335px;
+}
+
+#door {
+  display: block;
+  position: absolute;
+  bottom: 77px;
+  right: 30px;
+  width: 100px;
+  height: auto;
+  cursor: pointer;
+}
+
+#outside {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  display: none;
+}
+
+#outside.active {
+  display: flex;
+  opacity: 0;
+  animation: fade-in 0.25s ease-in forwards;
+  animation-delay: 2s;
+}
+
+#house {
+  width: 800px;
+  height: auto;
+  opacity: 0;
+  animation: fade-in 3s ease-in forwards;
+  animation-delay: 3s;
+}
+
+#sky {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  opacity: 0;
+  animation: fade-in 6s ease-in-out forwards;
+  animation-delay: 1.5s;
+}
+
+#sentence {
+  position: absolute;
+  left: 60px;
+  top: calc(100vh - 120px);
+  color: black;
+  font-size: 24px;
+  max-width: 20em;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+}
+
+#sentence > span {
+  opacity: 0;
+  animation: fade-in 0.4s ease-in-out forwards;
+  position: relative;
+  z-index: 3;
+}
+
+#sentence > span:before {
+  content: attr(data-letter);
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  transition: left 0.1s, top 0.1s;
+  color: orange;
+  opacity: 0.75;
+  z-index: -1;
+}
+
+#sentence > span:after {
+  content: attr(data-letter);
+  position: absolute;
+  left: calc(var(--x) * -2);
+  top: calc(var(--y) * 2);
+  transition: left 0.1s, top 0.1s;
+  color: yellow;
+  opacity: 0.5;
+  z-index: -2;
+}
