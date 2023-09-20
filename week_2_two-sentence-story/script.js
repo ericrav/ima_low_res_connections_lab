@@ -2,6 +2,12 @@ const sentence2 =
   'What is that glowing ball in the sky and why does it hurt my eyes?';
 
 window.addEventListener('load', () => {
+  box.addEventListener('scroll', () => {
+    if (typeof helpText === 'undefined') return;
+
+    box.removeChild(helpText);
+  })
+
   door.addEventListener('click', () => {
     indoors.classList.add('open');
     outside.classList.add('active');

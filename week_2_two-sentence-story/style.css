@@ -129,6 +129,19 @@ html, body {
   cursor: pointer;
 }
 
+#helpText {
+  position: fixed;
+  top: calc(50% + 308px);
+  left: 0;
+  right: 0;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  animation: fade-in 0.5s ease-in-out forwards;
+  animation-delay: 10s;
+}
+
 #outside {
   position: absolute;
   top: 0;
@@ -169,9 +182,9 @@ html, body {
 #sentence {
   position: absolute;
   left: 60px;
-  top: calc(100vh - 120px);
+  top: calc(100vh - 140px);
   color: black;
-  font-size: 24px;
+  font-size: 28px;
   max-width: 20em;
   letter-spacing: 0.1em;
   line-height: 1.5;
